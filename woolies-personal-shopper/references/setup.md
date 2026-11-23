@@ -47,6 +47,7 @@ Aggregate per product code:
 - orders (all time)
 - orders in the last 12 months (only for choosing defaults below; don't store it in the sheet)
 - first ordered and last ordered dates
+- the dates of its 5 most recent orders, newest first, one date per order (weighed items appear twice in an order; count it once)
 - last shelf price
 - sold by weight (yes or blank)
 
@@ -54,16 +55,18 @@ Aggregate per product code:
 
 **Keywords:** give each kept product the one word or short phrase a person would write on a shopping list for it: "milk", "bread", "apples", "baby tomatoes", "chicken fillets", "soy sauce". Use your judgement from the product name, not pattern rules. Products that are really the same thing in different sizes share a keyword. Dried fruit is not "apples"; crisps flavoured like chicken are not "chicken".
 
-**Defaults:** within each keyword, mark `Default = Yes` on the product with the most orders in the last 12 months. Break ties on all-time orders, then the most recent date. Exactly one default per keyword.
+**Defaults:** within each keyword, mark `Default = Yes` on the product with the most orders in the last 12 months. Break ties on all-time orders, then the most recent date. Exactly one default per keyword. Set **Default set** to today's date on each default row and leave it blank on the others.
 
 **Create the sheet** in the user's Drive titled `Woolies: Usual Items`:
 
 Tab `Items`, sorted by Last ordered (newest first), then by Orders (all time), with a header row:
 
-| Keyword | Default | Product | Code | Orders (all time) | First ordered | Last ordered | Last shelf price (R) | Sold by weight | Notes |
+| Keyword | Default | Product | Code | Orders (all time) | First ordered | Last ordered | Last shelf price (R) | Sold by weight | Notes | Default set | Recent orders |
 
+- **Recent orders** holds the 5 dates from above, comma-separated (`2026-11-08, 2026-10-30`).
 - Freeze the header row and add a filter.
 - Format the Code column as a plain number (pattern `0`) so long codes don't turn into scientific notation.
+- Format Default set and Recent orders as plain text (pattern `@`) so Sheets doesn't change the dates.
 
 Tab `Settings`:
 

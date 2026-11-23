@@ -30,11 +30,15 @@ If either is missing, say which one to connect and stop.
 
 **Items:** one row per product:
 
-| Keyword | Default | Product | Code | Orders (all time) | First ordered | Last ordered | Last shelf price (R) | Sold by weight | Notes |
+| Keyword | Default | Product | Code | Orders (all time) | First ordered | Last ordered | Last shelf price (R) | Sold by weight | Notes | Default set | Recent orders |
 
 - **Keyword** is the word a person writes on a list ("milk"). Several products can share one.
 - Exactly one row per keyword has **Default = Yes**. That is the product added when the list says that word.
 - **Notes** holds aliases (`Also for "sourdough"`) and short reasons for changes.
+- **Default set** is the date this row became the default (`YYYY-MM-DD`). Only the default row's value is used. Whenever you make a row the default, for any reason, set it to today and clear Default set on the row that was the default before. A blank Default set on the default row means the user moved the Yes by hand.
+- **Recent orders** holds the dates of the last 5 orders that included this product, newest first, separated by commas (`2026-11-08, 2026-10-30`). Use one date per order, even when a product appears twice in an order (weighed items do). When an order comes in, add its date at the front and drop any after the fifth.
+- Keep **Default set** and **Recent orders** formatted as plain text, so Sheets doesn't change the dates.
+- **Older sheets** may not have these last two columns. Add them at the end of Items, as plain text, and leave them blank. Drift starts working as new orders fill them.
 
 **Settings:** column A is the setting name and column B its value:
 - Last order synced
@@ -62,9 +66,13 @@ Act on your own and tell the user afterwards. A wrong change costs little, becau
 - The user uses a new word for a known product: add it as an alias in that row's Notes.
 - The user corrects a pick for good ("always the low-fat one"): move Default to that row.
 - The user picks a product from search results: add a row, and make it the default for the word they used.
-- An order comes in: update its products' Orders count, Last ordered and Last shelf price.
+- An order comes in: update its products' Orders count, Last ordered, Recent orders and Last shelf price.
 
-**Drift: switch the default on your own when the evidence is clear.** If another product under the same keyword has been ordered 3 or more times since the default was last ordered, make it the default. Note the reason in Notes and in the report: "Switched apples to Royal Gala: bought 4 times since your last Pink Lady."
+**Drift: switch the default on your own when the evidence is clear.** For each keyword the new orders touched:
+1. Find the default row. If its **Default set** is blank, the user moved the Yes by hand: set it to today and skip this keyword this time.
+2. The starting point is the later of the default's **Last ordered** and its **Default set**. A choice the user made therefore sticks until they buy something else after making it.
+3. For every other row under the keyword, count the dates in **Recent orders** that are after the starting point.
+4. If a row has 3 or more, make it the default. If several do, pick the one with the most, then the most recent order. Note the reason in Notes and in the report: "Switched apples to Royal Gala: bought 4 times since your last Pink Lady."
 
 **Ask only when you can't decide or need information.** At most 3 questions per shop, at the end, each answerable with yes or no or one word. Examples:
 - Two products are close and neither clearly leads.

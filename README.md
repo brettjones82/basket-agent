@@ -72,7 +72,7 @@ You don't need to maintain anything. Each shop, your agent:
 
 - **adds new things you've started buying** to your sheet;
 - **remembers your words.** Say "when I say the good bread I mean the seeded loaf" once, and it remembers;
-- **notices when your habits change.** Buy a different brand a few times and it becomes your new usual. Your agent tells you when it switches;
+- **notices when your habits change.** Buy a different product 3 times since you last bought your usual and it becomes your new usual. Your agent tells you when it switches. If you choose your usual yourself, that choice sticks until you buy something else 3 times after making it;
 - **asks at most 3 quick questions** when it genuinely can't tell.
 
 You can also edit the sheet yourself any time. Move the "Yes" in the Default column to change your usual.
