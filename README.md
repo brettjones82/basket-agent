@@ -94,3 +94,7 @@ woolies-personal-shopper/
   references/setup.md          the first-time setup steps
   references/woolies-calls.md  how your agent talks to the Woolworths website
 ```
+
+## Licence
+
+MIT. Use it, copy it and change it, but keep the copyright notice. It comes with no warranty. See [LICENSE](LICENSE).
