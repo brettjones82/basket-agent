@@ -25,7 +25,7 @@ Last updated: 24 Nov 2026
 
 | Item | Why | Owner | Status |
 |---|---|---|---|
-| Give Wiehahn access to the repo | So he can send his changes as pull requests | Brett | Waiting for his GitHub username |
+| Give Wiehahn access to the repo | So he can send his changes as pull requests | Brett | Invited 24 Nov (WiehahnCars). Waiting for him to accept |
 | Bring in Wiehahn's Checkers, per-kg and recipe changes | They work, and they're the most useful thing built so far | Wiehahn | Not started |
 | Make installing easier | It took the longest. Clearer steps with screenshots, plus a ready-made zip on GitHub so nobody has to zip a folder | Anyone | Not started |
 
