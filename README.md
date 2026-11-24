@@ -1,4 +1,6 @@
-# Woolies Personal Shopper
+# Basket Agent
+
+> **Work in progress.** This is the shared version Brett and Wiehahn are building together, heading towards more than one store (Checkers Sixty60 next). Today it does Woolworths only. The original Woolies-only skill stays at [woolies-personal-shopper-skill](https://github.com/brettjones82/woolies-personal-shopper-skill). See [ROADMAP.md](ROADMAP.md).
 
 **Send your agent your shopping list. It fills your Woolworths basket with the things you usually buy.**
 

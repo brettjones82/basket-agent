@@ -38,7 +38,6 @@ Last updated: 24 Nov 2026
 | Always compare per kg or per unit | Pack prices mislead. Only compare products of a similar size | | |
 | Delivery and subscriptions in the totals | Delivery decides whether splitting a basket is worth it. A Sixty60 subscription changes the maths | | |
 | First real test of the habit-change rule | It has only been checked against worked examples | | |
-| Decide on a name | It's more than a Woolies shopper once Checkers is in | | |
 
 ## Ideas
 
@@ -56,7 +55,6 @@ Not agreed yet. Add yours, and say why it matters.
 ## Open questions
 
 - **Hobby or product?** Wiehahn suggested launching it as a tool for people. Before anyone spends real time on that: neither store has a public API, so this relies on using their websites as a shopper would, which can break without warning and may conflict with their terms. A product would also need support and accounts. Decide this together before building towards it.
-- **Name:** keep "Woolies Personal Shopper", or something broader?
 
 ## Decisions
 
@@ -65,3 +63,5 @@ Not agreed yet. Add yours, and say why it matters.
 | 23 Nov 2026 | Repo made public under the MIT licence |
 | 23 Nov 2026 | The habit-change rule counts purchases since your usual was last bought, or since you chose it, whichever is later. Your own choice sticks |
 | 24 Nov 2026 | Changes come in as pull requests, approved by Brett |
+| 24 Nov 2026 | Joint work happens here in `basket-agent`, copied from `woolies-personal-shopper-skill`. That repo stays Woolies-only and Brett's own |
+| 24 Nov 2026 | Name: Basket Agent. The skill folder inside is still `woolies-personal-shopper` until a second store is added |
