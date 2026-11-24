@@ -95,6 +95,10 @@ woolies-personal-shopper/
   references/woolies-calls.md  how your agent talks to the Woolworths website
 ```
 
+## Roadmap and contributing
+
+What's being worked on, what's next and ideas: [ROADMAP.md](ROADMAP.md). Changes come in as pull requests.
+
 ## Licence
 
 MIT. Use it, copy it and change it, but keep the copyright notice. It comes with no warranty. See [LICENSE](LICENSE).
